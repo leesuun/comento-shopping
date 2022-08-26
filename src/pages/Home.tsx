@@ -1,5 +1,6 @@
+import { useState } from "react";
 import styled from "styled-components";
-import { cupItems, winterItems } from "../apis/productItem";
+import { cup, winter } from "../apis/productItem";
 
 import ProductItem from "../components/ProductItem";
 import ThemeBtn from "../components/ThemeBtn";
@@ -22,7 +23,16 @@ export const ProductSection = styled.div`
 
 export const ProductList = styled.ul``;
 
+enum ThemeType {
+  "cup" = "cup",
+  "winter" = "winter",
+}
+
 function Home() {
+  const [themeType, setThemeType] = useState(ThemeType.cup);
+
+  const onClickBtn = () => {};
+
   return (
     <div>
       <ThemeSection>
@@ -32,7 +42,7 @@ function Home() {
       <GrayLine />
       <ProductSection>
         <ProductList>
-          {cupItems.map((item) => (
+          {cup.items.map((item) => (
             <ProductItem
               name={item.name}
               description={item.description}
