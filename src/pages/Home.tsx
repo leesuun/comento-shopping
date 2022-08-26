@@ -1,11 +1,7 @@
-import styled from "styled-components";
 import Navigation from "../components/Navigation";
 import ProductItem from "../components/ProductItem";
 import ThemeBtn from "../components/ThemeBtn";
-
-const ThemeSection = styled.div``;
-const ProductSection = styled.section``;
-const ProductList = styled.ul``;
+import { ProductList, ProductSection, ThemeSection } from "../css/pages/home";
 
 function Home() {
   return (
