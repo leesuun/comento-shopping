@@ -50,7 +50,9 @@ export const GlobalStyle = createGlobalStyle`
     display:none;
   }
   body{
-    max-width:500px;
+    max-width:390px;
+    border: 1px solid black;
+    margin: 0 auto;
   }
   
   
