@@ -1,6 +1,12 @@
-interface productItemsType {
+export interface ProductDetaileProps {
+  name: string;
+  description: string;
+  thumbnail: string;
+}
+
+export interface productItemsType {
   [category: string]: {
-    [items: string]: { name: string; description: string; thumbnail: string }[];
+    [items: string]: ProductDetaileProps[];
   };
 }
 
