@@ -49,5 +49,8 @@ export const GlobalStyle = createGlobalStyle`
   ::-webkit-scrollbar{
     display:none;
   }
+  body{
+    max-width:500px;
+  }
   
 `;
