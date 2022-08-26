@@ -1,6 +1,12 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
-export const ThemeBtnStyled = styled.button`
+const opacity = keyframes`
+  100% {
+    opacity: 1;
+  }
+`;
+
+const ThemeBtnStyled = styled.button`
   background: rgba(0, 0, 0, 0.5);
   width: fit-content;
   border: none;
@@ -10,6 +16,11 @@ export const ThemeBtnStyled = styled.button`
   line-height: 26px;
   padding: 24px 16px;
   color: white;
+  opacity: 0.7;
+  cursor: pointer;
+  &:hover {
+    animation: ${opacity} 0.5s forwards;
+  }
 `;
 
 interface ThemeBtnProps {
