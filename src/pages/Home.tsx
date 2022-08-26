@@ -1,12 +1,25 @@
-import Navigation from "../components/Navigation";
+import styled from "styled-components";
+
 import ProductItem from "../components/ProductItem";
 import ThemeBtn from "../components/ThemeBtn";
-import {
-  GrayLine,
-  ProductList,
-  ProductSection,
-  ThemeSection,
-} from "../css/pages/home";
+
+export const ThemeSection = styled.div`
+  display: flex;
+  gap: 12px;
+  padding: 40px 12px;
+`;
+
+export const GrayLine = styled.div`
+  height: 8px;
+  width: 100%;
+  background: #eeeeee;
+`;
+
+export const ProductSection = styled.div`
+  padding: 20px;
+`;
+
+export const ProductList = styled.ul``;
 
 function Home() {
   return (

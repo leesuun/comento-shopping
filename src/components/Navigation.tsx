@@ -1,5 +1,14 @@
-import { Nav, NavWraaper } from "../css/components/navigation";
-import { GrayLine } from "../css/pages/home";
+import styled from "styled-components";
+import { GrayLine } from "../pages/Home";
+
+export const NavWraaper = styled.div`
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+`;
+export const Nav = styled.nav``;
 
 function Navigation() {
   return (
