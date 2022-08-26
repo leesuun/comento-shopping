@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { GlobalStyle } from "./globalstyle";
+import { GlobalStyle } from "./css/globalstyle";
 import Basket from "./pages/Basket";
 import Home from "./pages/Home";
 import ProductDetail from "./pages/ProductDetail";
