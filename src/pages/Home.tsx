@@ -16,10 +16,12 @@ export const GrayLine = styled.div`
 `;
 
 export const ProductSection = styled.div`
-  padding: 20px;
+  padding: 40px;
 `;
 
-export const ProductList = styled.ul``;
+export const ProductList = styled.ul`
+  /* border: 1px solid red; */
+`;
 
 function Home() {
   return (
