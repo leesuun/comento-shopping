@@ -1,4 +1,10 @@
-export const productItems = {
+interface productItemsType {
+  [category: string]: {
+    [items: string]: { name: string; description: string; thumbnail: string }[];
+  };
+}
+
+export const productItems: productItemsType = {
   cup: {
     items: [
       {
