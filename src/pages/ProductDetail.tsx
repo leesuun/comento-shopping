@@ -1,6 +1,25 @@
 import { useLocation } from "react-router-dom";
+import styled from "styled-components";
 import { ProductInfo } from "../apis/productItem";
 import ProductItem from "../components/ProductItem";
+
+const ButtonGroup = styled.div`
+  display: flex;
+`;
+const Button = styled.button`
+  width: 100%;
+  height: 48px;
+  border: none;
+`;
+
+const ProductExplain = styled.img``;
+const ProductComment = styled.div``;
+const BasketBtn = styled.button`
+  width: 100%;
+  height: 70px;
+  border: none;
+  background-color: #24dbaf;
+`;
 
 interface ProductDetailProps {
   data: ProductInfo;
@@ -26,10 +45,13 @@ function ProductDetail() {
         price={price}
         thumbnail={thumbnail}
       />
-      <div>
-        <button>상품 설명</button>
-        <button>상품 후기</button>
-      </div>
+      <ButtonGroup>
+        <Button>상품 설명</Button>
+        <Button>상품 후기</Button>
+      </ButtonGroup>
+      <ProductExplain />
+      <ProductComment>코멘트</ProductComment>
+      <BasketBtn>장바구니</BasketBtn>
     </div>
   );
 }
