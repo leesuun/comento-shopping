@@ -46,9 +46,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   // developer settings
-  body{
-    display:flex;
-    justify-content:center;
-    width:100%;
+  ::-webkit-scrollbar{
+    display:none;
   }
+  
 `;
