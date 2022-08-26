@@ -44,4 +44,10 @@ export const GlobalStyle = createGlobalStyle`
     border-collapse: collapse;
     border-spacing: 0;
   }
+
+  // developer settings
+  body{
+    display:flex;
+    justify-content:center;
+  }
 `;
