@@ -21,16 +21,22 @@ export const Description = styled.p`
 
 interface ProductItemProps {
   name: string;
-  description: string;
   thumbnail: string;
+  description?: string;
+  price?: number;
 }
 
-function ProductItem({ name, description, thumbnail }: ProductItemProps) {
+function ProductItem({
+  name,
+  description,
+  thumbnail,
+  price,
+}: ProductItemProps) {
   return (
     <Item>
       <Img src={thumbnail} alt={name} />
       <Name>{name}</Name>
-      <Description>{description}</Description>
+      <Description>{description || price + "원"}</Description>
     </Item>
   );
 }

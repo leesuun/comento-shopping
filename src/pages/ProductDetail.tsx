@@ -1,18 +1,20 @@
 import { useLocation } from "react-router-dom";
-import { ProductDetaileProps } from "../apis/productItem";
+import { ProductInfo } from "../apis/productItem";
 import ProductItem from "../components/ProductItem";
+
+interface ProductDetailProps {
+  data: ProductInfo;
+}
 
 function ProductDetail() {
   const location = useLocation();
-  const item = location.state as ProductDetaileProps;
+  const {
+    data: { name, price, thumbnail },
+  } = location.state as ProductDetailProps;
 
   return (
     <div>
-      <ProductItem
-        name={item.name}
-        description={item.description}
-        thumbnail={item.thumbnail}
-      />
+      <ProductItem name={name} price={price} thumbnail={thumbnail} />
     </div>
   );
 }
