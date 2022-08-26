@@ -5,7 +5,7 @@ import ProductDetail from "./components/ProductDetail";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="comento-shopping">
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/product/:productId" element={<ProductDetail />}></Route>
