@@ -11,7 +11,6 @@ import {
 function Home() {
   return (
     <div>
-      <Navigation />
       <ThemeSection>
         <ThemeBtn themeName={"#겨울방한템"}></ThemeBtn>
         <ThemeBtn themeName={"#따순머그컵"}></ThemeBtn>
