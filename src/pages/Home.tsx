@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
-import { cup, winter } from "../apis/productItem";
+import { productItems } from "../apis/productItem";
 
 import ProductItem from "../components/ProductItem";
 import ThemeBtn from "../components/ThemeBtn";
@@ -23,30 +23,39 @@ export const ProductSection = styled.div`
 
 export const ProductList = styled.ul``;
 
-enum ThemeType {
+enum Category {
   "cup" = "cup",
   "winter" = "winter",
 }
 
 function Home() {
-  const [themeType, setThemeType] = useState(ThemeType.cup);
+  const [category, setCategory] = useState<string>(Category.cup);
 
-  const onClickBtn = () => {};
+  const onClickBtn = (type: string) => setCategory(type);
 
   return (
     <div>
       <ThemeSection>
-        <ThemeBtn themeName={"# 겨울방한템"}></ThemeBtn>
-        <ThemeBtn themeName={"# 따순머그컵"}></ThemeBtn>
+        <ThemeBtn
+          onClick={onClickBtn}
+          themeName={"# 겨울방한템"}
+          type={Category.cup}
+        ></ThemeBtn>
+        <ThemeBtn
+          onClick={onClickBtn}
+          themeName={"# 따순머그컵"}
+          type={Category.winter}
+        ></ThemeBtn>
       </ThemeSection>
       <GrayLine />
       <ProductSection>
         <ProductList>
-          {cup.items.map((item) => (
+          {productItems[category].items.map((item) => (
             <ProductItem
               name={item.name}
               description={item.description}
               thumbnail={item.thumbnail}
+              key={item.name}
             />
           ))}
         </ProductList>

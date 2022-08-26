@@ -14,10 +14,14 @@ export const ThemeBtnStyled = styled.button`
 
 interface ThemeBtnProps {
   themeName: string;
+  type: string;
+  onClick: (type: string) => void;
 }
 
-function ThemeBtn({ themeName }: ThemeBtnProps) {
-  return <ThemeBtnStyled>{themeName}</ThemeBtnStyled>;
+function ThemeBtn({ themeName, onClick, type }: ThemeBtnProps) {
+  return (
+    <ThemeBtnStyled onClick={() => onClick(type)}>{themeName}</ThemeBtnStyled>
+  );
 }
 
 export default ThemeBtn;
