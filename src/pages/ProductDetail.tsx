@@ -1,5 +1,9 @@
+import { useLocation } from "react-router-dom";
+
 function ProductDetail() {
-  return <div>ProductDetail</div>;
+  const location = useLocation();
+
+  return <div></div>;
 }
 
 export default ProductDetail;

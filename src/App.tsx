@@ -8,7 +8,7 @@ import ProductDetail from "./pages/ProductDetail";
 function App() {
   return (
     <>
-      <BrowserRouter basename="comento-shopping">
+      <BrowserRouter basename="/comento-shopping">
         <Navigation />
         <Routes>
           <Route path="/" element={<Home />}></Route>

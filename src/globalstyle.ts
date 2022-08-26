@@ -53,4 +53,5 @@ export const GlobalStyle = createGlobalStyle`
     max-width:500px;
   }
   
+  
 `;

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { productItems } from "../apis/productItem";
 
@@ -51,12 +52,17 @@ function Home() {
       <ProductSection>
         <ProductList>
           {productItems[category].items.map((item) => (
-            <ProductItem
-              name={item.name}
-              description={item.description}
-              thumbnail={item.thumbnail}
+            <Link
+              to={{ pathname: `/product/${item.name}` }}
+              state={{ item: item }}
               key={item.name}
-            />
+            >
+              <ProductItem
+                name={item.name}
+                description={item.description}
+                thumbnail={item.thumbnail}
+              />
+            </Link>
           ))}
         </ProductList>
       </ProductSection>
