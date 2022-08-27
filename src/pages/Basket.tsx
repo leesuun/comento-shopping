@@ -5,6 +5,10 @@ import { BasketBtn, ProductDetailProps } from "./ProductDetail";
 
 const BasketList = styled.ul``;
 const BasketItem = styled.li``;
+const ItemImg = styled.img``;
+const ItemInfo = styled.div``;
+const ItemName = styled.span``;
+const ItemPrice = styled.span``;
 const PaymentInfo = styled.div``;
 const Price = styled.div``;
 const DeliveryFee = styled.div``;
@@ -22,11 +26,11 @@ function Basket() {
     <div>
       <BasketList>
         <BasketItem>
-          <img src={thumbnail} alt="" />
-          <div>
-            <span>{name}</span>
-            <span>{price}</span>
-          </div>
+          <ItemImg src={thumbnail} alt="" />
+          <ItemInfo>
+            <ItemName>{name}</ItemName>
+            <ItemPrice>{price}</ItemPrice>
+          </ItemInfo>
         </BasketItem>
       </BasketList>
 
