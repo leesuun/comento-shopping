@@ -1,6 +1,6 @@
 export interface ProductInfo {
   name: string;
-  description: string;
+  description?: string;
   thumbnail: string;
   price: number;
 }
