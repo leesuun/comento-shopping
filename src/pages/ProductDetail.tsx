@@ -14,14 +14,14 @@ const Button = styled.button`
 
 const ProductExplain = styled.img``;
 const ProductComment = styled.div``;
-const BasketBtn = styled.button`
+export const BasketBtn = styled.button`
   width: 100%;
   height: 70px;
   border: none;
   background-color: #24dbaf;
 `;
 
-interface ProductDetailProps {
+export interface ProductDetailProps {
   data: ProductInfo;
 }
 
@@ -51,7 +51,10 @@ function ProductDetail() {
       </ButtonGroup>
       <ProductExplain />
       <ProductComment>코멘트</ProductComment>
-      <Link to={{ pathname: "/basket" }} state={{ name, price, thumbnail }}>
+      <Link
+        to={{ pathname: "/basket" }}
+        state={{ data: { name, price, thumbnail } }}
+      >
         <BasketBtn>장바구니 담기</BasketBtn>
       </Link>
     </div>
