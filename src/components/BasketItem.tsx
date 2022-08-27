@@ -11,7 +11,7 @@ const Img = styled.img`
 `;
 const Info = styled.div`
   display: flex;
-  padding: 5px 0px;
+  padding: 4px 0px;
   flex-direction: column;
   justify-content: space-between;
 `;
