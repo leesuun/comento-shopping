@@ -3,9 +3,8 @@ import styled from "styled-components";
 export const Item = styled.li`
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 12px;
   margin-bottom: 25px;
-  box-shadow: 2px 2px 2px black;
 `;
 export const Img = styled.img`
   width: 100%;
@@ -21,16 +20,28 @@ export const Description = styled.p`
 
 interface ProductItemProps {
   name: string;
-  description: string;
   thumbnail: string;
+  description?: string;
+  price?: number;
+  style?: { height?: string; marginLeft?: string; marginTop?: string };
 }
 
-function ProductItem({ name, description, thumbnail }: ProductItemProps) {
+function ProductItem({
+  name,
+  description,
+  thumbnail,
+  price,
+  style,
+}: ProductItemProps) {
   return (
     <Item>
-      <Img src={thumbnail} alt={name} />
-      <Name>{name}</Name>
-      <Description>{description}</Description>
+      <Img style={{ height: style?.height }} src={thumbnail} alt={name} />
+      <Name style={{ marginLeft: style?.marginLeft }}>{name}</Name>
+      <Description
+        style={{ marginLeft: style?.marginLeft, marginTop: style?.marginTop }}
+      >
+        {description || price + "원"}
+      </Description>
     </Item>
   );
 }
