@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { ProductInfo } from "../apis/productItem";
 import ProductItem from "../components/ProductItem";
@@ -51,7 +51,9 @@ function ProductDetail() {
       </ButtonGroup>
       <ProductExplain />
       <ProductComment>코멘트</ProductComment>
-      <BasketBtn>장바구니 담기</BasketBtn>
+      <Link to={{ pathname: "/basket" }} state={{ name, price, thumbnail }}>
+        <BasketBtn>장바구니 담기</BasketBtn>
+      </Link>
     </div>
   );
 }
