@@ -51,7 +51,7 @@ function ProductDetail() {
       </ButtonGroup>
       <ProductExplain />
       <ProductComment>코멘트</ProductComment>
-      <BasketBtn>장바구니</BasketBtn>
+      <BasketBtn>장바구니 담기</BasketBtn>
     </div>
   );
 }
