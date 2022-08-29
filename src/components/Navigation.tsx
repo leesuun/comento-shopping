@@ -45,7 +45,7 @@ function Navigation() {
     );
     const product = products.filter((v) => v.length !== 0).flat();
     setProduct(product);
-  }, [productMatch?.params.id]);
+  }, [productMatch]);
 
   return (
     <NavWraaper>
