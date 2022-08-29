@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link, useMatch } from "react-router-dom";
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import { ProductInfo, productItems } from "../apis/productItem";
 import { GrayLine } from "../pages/Home";
 
@@ -11,7 +13,17 @@ const NavWraaper = styled.div`
   font-size: 20px;
   font-weight: bold;
 `;
-const Nav = styled.nav``;
+const Nav = styled.nav`
+  position: relative;
+
+  div {
+    position: absolute;
+    left: 20px;
+    font-size: 1.5rem;
+    border: none;
+    background-color: inherit;
+  }
+`;
 
 enum Pages {
   "home" = "/",
@@ -40,7 +52,9 @@ function Navigation() {
       <Nav>
         {productMatch && (
           <Link to={Pages.home}>
-            <button>홈으로</button>
+            <div>
+              <FontAwesomeIcon icon={faAngleLeft} />
+            </div>
           </Link>
         )}
         {product
@@ -56,7 +70,9 @@ function Navigation() {
                   },
                 }}
               >
-                <button>제품으로</button>
+                <div>
+                  <FontAwesomeIcon icon={faAngleLeft} />
+                </div>
               </Link>
             )
           : null}
