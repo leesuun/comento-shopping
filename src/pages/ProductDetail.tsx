@@ -19,6 +19,7 @@ export const BasketBtn = styled.button`
   height: 70px;
   border: none;
   background-color: #24dbaf;
+  cursor: pointer;
 `;
 
 export interface ProductDetailProps {

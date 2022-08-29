@@ -59,7 +59,8 @@ export const GlobalStyle = createGlobalStyle`
     max-width:390px;
     margin: 0 auto;
     margin-top: 30px;
-    box-shadow: 3px 3px 3px 3px black
+    box-shadow: 3px 3px 3px 3px black;
+    
   }
   
   
