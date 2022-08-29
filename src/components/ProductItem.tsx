@@ -1,19 +1,19 @@
 import styled from "styled-components";
 
-export const Item = styled.li`
+const Item = styled.li`
   display: flex;
   flex-direction: column;
   gap: 12px;
   margin-bottom: 25px;
 `;
-export const Img = styled.img`
+const Img = styled.img`
   width: 100%;
   height: 250px;
 `;
-export const Name = styled.h3`
+const Name = styled.h3`
   font-weight: bold;
 `;
-export const Description = styled.p`
+const Description = styled.p`
   line-height: 1.3;
   margin-bottom: 5px;
 `;
