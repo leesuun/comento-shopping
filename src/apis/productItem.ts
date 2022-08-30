@@ -59,7 +59,7 @@ export const productItems: productItemsType = {
         price: 25000,
       },
       {
-        name: "발렌티노크리스티 면95% 바닥 도톰한 이중 쿠션 스포츠양말 중목 6켤레",
+        name: "발렌티노크리스티 스포츠양말 중목 6켤레",
         description:
           "흘러내림 방지를 위해 발목 전체 탄력있는 서포트 밴딩처리로 오랜시간 안정감있는 착용 가능!",
         thumbnail:
