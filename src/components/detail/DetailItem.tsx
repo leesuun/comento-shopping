@@ -1,4 +1,6 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
+import { getProductDetail, ProductInfo } from "../../mock/productItem";
 import { IProductDetailProps } from "../../pages/ProductDetail";
 
 const Item = styled.div``;
@@ -16,12 +18,19 @@ const Name = styled.div`
 const Price = styled.div``;
 
 function DetailItem({ id }: IProductDetailProps) {
+  const [product, setProduct] = useState<ProductInfo>();
+
+  useEffect(() => {
+    const result = getProductDetail(Number(id));
+    setProduct(result);
+  }, [id]);
+
   return (
     <Item>
-      <Img src="https://raw.githubusercontent.com/congchu/coment-shop-server/master/assets/images/product1.jpg" />
+      <Img src={product?.thumbnail} />
       <Info>
-        <Name>해피데이 따뜻해 포켓용 핫팩 100g</Name>
-        <Price>10000원</Price>
+        <Name>{product?.name}</Name>
+        <Price>{product?.price + "원"}</Price>
       </Info>
     </Item>
   );
