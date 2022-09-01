@@ -27,24 +27,15 @@ export interface ProductDetailProps {
 }
 
 function ProductDetail() {
-  const location = useLocation();
-  const {
-    data: { name, price, thumbnail },
-  } = location.state as ProductDetailProps;
-
   return (
     <div>
-      <ProductItem name={name} price={price} thumbnail={thumbnail} />
       <ButtonGroup>
         <Button>상품 설명</Button>
         <Button>상품 후기</Button>
       </ButtonGroup>
       <ProductExplain />
       <ProductComment>코멘트</ProductComment>
-      <Link
-        to={{ pathname: "/basket" }}
-        state={{ data: { name, price, thumbnail } }}
-      >
+      <Link to={{ pathname: "/basket" }}>
         <BasketBtn>장바구니 담기</BasketBtn>
       </Link>
     </div>
