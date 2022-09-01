@@ -26,12 +26,6 @@ export interface ProductDetailProps {
   data: ProductInfo;
 }
 
-const style: { [stinrg: string]: string } = {
-  height: "420px",
-  marginLeft: "20px",
-  marginTop: "-7px",
-};
-
 function ProductDetail() {
   const location = useLocation();
   const {
@@ -40,12 +34,7 @@ function ProductDetail() {
 
   return (
     <div>
-      <ProductItem
-        style={style}
-        name={name}
-        price={price}
-        thumbnail={thumbnail}
-      />
+      <ProductItem name={name} price={price} thumbnail={thumbnail} />
       <ButtonGroup>
         <Button>상품 설명</Button>
         <Button>상품 후기</Button>
