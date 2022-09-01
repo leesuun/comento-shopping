@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { ProductInfo } from "../apis/productItem";
+import DetailItem from "../components/detail/DetailItem";
 
 const ButtonGroup = styled.div`
   display: flex;
@@ -28,6 +29,7 @@ export interface ProductDetailProps {
 function ProductDetail() {
   return (
     <div>
+      <DetailItem />
       <ButtonGroup>
         <Button>상품 설명</Button>
         <Button>상품 후기</Button>
