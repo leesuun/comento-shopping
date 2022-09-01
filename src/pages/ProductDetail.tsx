@@ -22,7 +22,7 @@ export const BasketBtn = styled.button`
   cursor: pointer;
 `;
 
-interface IProductDetailProps {
+export interface IProductDetailProps {
   id: string;
 }
 

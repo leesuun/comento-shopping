@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { IProductDetailProps } from "../../pages/ProductDetail";
 
 const Item = styled.div``;
 const Img = styled.img`
@@ -14,7 +15,7 @@ const Name = styled.div`
 `;
 const Price = styled.div``;
 
-function DetailItem() {
+function DetailItem({ id }: IProductDetailProps) {
   return (
     <Item>
       <Img src="https://raw.githubusercontent.com/congchu/coment-shop-server/master/assets/images/product1.jpg" />
