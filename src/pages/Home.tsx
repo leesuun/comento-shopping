@@ -51,11 +51,7 @@ function Home() {
       <ProductSection>
         <ProductList>
           {productItems[category].items.map((item) => (
-            <Link
-              to={{ pathname: `/product/${item.name}` }}
-              state={{ data: item }}
-              key={item.name}
-            >
+            <Link to={{ pathname: `/product/${item.name}` }} key={item.name}>
               <ProductItem
                 name={item.name}
                 description={item.description}
