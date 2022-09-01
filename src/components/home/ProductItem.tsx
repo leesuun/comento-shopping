@@ -25,17 +25,12 @@ interface ProductItemProps {
   price?: number;
 }
 
-function ProductItem({
-  name,
-  description,
-  thumbnail,
-  price,
-}: ProductItemProps) {
+function ProductItem({ name, description, thumbnail }: ProductItemProps) {
   return (
     <Item>
       <Img src={thumbnail} alt={name} />
       <Name>{name}</Name>
-      <Description>{description || price + "원"}</Description>
+      <Description>{description}</Description>
     </Item>
   );
 }
