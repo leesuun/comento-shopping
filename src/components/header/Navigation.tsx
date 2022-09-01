@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import { GrayLine } from "../../pages/Home";
+import { Pages } from "../../interface/interface";
 
 const NavWraaper = styled.div`
   width: 100%;
@@ -26,12 +27,6 @@ const Nav = styled.nav`
     cursor: pointer;
   }
 `;
-
-enum Pages {
-  "home" = "/",
-  "product" = "/product/:id",
-  "basket" = "/basket",
-}
 
 function Navigation() {
   const productMatch = useMatch(Pages.product);

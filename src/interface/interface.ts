@@ -38,6 +38,13 @@ export interface IPaymentDataProps {
   price: string;
 }
 
-/***************** basket *****************/
 /***************** header *****************/
+/* navigation */
+export enum Pages {
+  "home" = "/",
+  "product" = "/product/:id",
+  "basket" = "/basket",
+}
+
+/***************** basket *****************/
 /***************** global *****************/
