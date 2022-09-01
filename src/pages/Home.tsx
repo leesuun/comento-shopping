@@ -60,7 +60,6 @@ function Home() {
                 name={item.name}
                 description={item.description}
                 thumbnail={item.thumbnail}
-                price={item.price}
               />
             </Link>
           ))}

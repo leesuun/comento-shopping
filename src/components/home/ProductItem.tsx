@@ -21,8 +21,7 @@ const Description = styled.p`
 interface ProductItemProps {
   name: string;
   thumbnail: string;
-  description?: string;
-  price?: number;
+  description: string;
 }
 
 function ProductItem({ name, description, thumbnail }: ProductItemProps) {
