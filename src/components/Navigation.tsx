@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useMatch } from "react-router-dom";
+import { Link, useMatch, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
@@ -34,48 +34,21 @@ enum Pages {
 function Navigation() {
   const productMatch = useMatch(Pages.product);
   const basketMatch = useMatch(Pages.basket);
-  const [product, setProduct] = useState<ProductInfo[]>();
-
-  useEffect(() => {
-    if (!productMatch?.params.id) return;
-    const { id } = productMatch.params;
-    const findValues = Object.values(productItems);
-    const products = findValues.map((value) =>
-      value.items.filter((item) => item.name === id)
-    );
-    const product = products.filter((v) => v.length !== 0).flat();
-    setProduct(product);
-  }, [productMatch?.params.id]);
+  const navigate = useNavigate();
 
   return (
     <NavWraaper>
       <Nav>
         {productMatch && (
-          <Link to={Pages.home}>
-            <div>
-              <FontAwesomeIcon icon={faAngleLeft} />
-            </div>
-          </Link>
+          <div onClick={() => navigate(-1)}>
+            <FontAwesomeIcon icon={faAngleLeft} />
+          </div>
         )}
-        {product
-          ? basketMatch && (
-              <Link
-                to={"/product/" + product[0].name}
-                state={{
-                  data: {
-                    name: product[0].name,
-                    description: product[0].description,
-                    thumbnail: product[0].thumbnail,
-                    price: product[0].price,
-                  },
-                }}
-              >
-                <div>
-                  <FontAwesomeIcon icon={faAngleLeft} />
-                </div>
-              </Link>
-            )
-          : null}
+        {basketMatch && (
+          <div onClick={() => navigate(-1)}>
+            <FontAwesomeIcon icon={faAngleLeft} />
+          </div>
+        )}
         코멘토 쇼핑
       </Nav>
       <GrayLine style={{ height: "2px", marginTop: "20px" }} />
