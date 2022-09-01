@@ -23,7 +23,6 @@ interface ProductItemProps {
   thumbnail: string;
   description?: string;
   price?: number;
-  style?: { height?: string; marginLeft?: string; marginTop?: string };
 }
 
 function ProductItem({
@@ -31,17 +30,12 @@ function ProductItem({
   description,
   thumbnail,
   price,
-  style,
 }: ProductItemProps) {
   return (
     <Item>
-      <Img style={{ height: style?.height }} src={thumbnail} alt={name} />
-      <Name style={{ marginLeft: style?.marginLeft }}>{name}</Name>
-      <Description
-        style={{ marginLeft: style?.marginLeft, marginTop: style?.marginTop }}
-      >
-        {description || price + "원"}
-      </Description>
+      <Img src={thumbnail} alt={name} />
+      <Name>{name}</Name>
+      <Description>{description || price + "원"}</Description>
     </Item>
   );
 }
