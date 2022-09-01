@@ -13,6 +13,9 @@ const NavWraaper = styled.div`
   font-size: 20px;
   font-weight: bold;
 `;
+
+const Title = styled.h3``;
+
 const Nav = styled.nav`
   position: relative;
 
@@ -22,6 +25,7 @@ const Nav = styled.nav`
     font-size: 1.5rem;
     border: none;
     background-color: inherit;
+    cursor: pointer;
   }
 `;
 
@@ -49,7 +53,7 @@ function Navigation() {
             <FontAwesomeIcon icon={faAngleLeft} />
           </div>
         )}
-        코멘토 쇼핑
+        <Title onClick={() => navigate("/")}>코멘토 쇼핑</Title>
       </Nav>
       <GrayLine style={{ height: "2px", marginTop: "20px" }} />
     </NavWraaper>
