@@ -19,10 +19,6 @@ const PaymentInfo = styled.div`
 `;
 
 function Basket() {
-  const location = useLocation();
-  const {
-    data: { thumbnail, name, price },
-  } = location.state as ProductDetailProps;
   const [isOverlay, setIsOverlay] = useState(false);
 
   const onClick = () => {
@@ -33,8 +29,8 @@ function Basket() {
     <Wrapper>
       {isOverlay ? <Overlay /> : null}
       <BasketList>
-        <BasketItem thumbnail={thumbnail} name={name} price={price} />
-        <BasketItem thumbnail={thumbnail} name={name} price={price} />
+        {/* <BasketItem />
+        <BasketItem /> */}
       </BasketList>
       <GrayLine style={{ height: "1px" }} />
       <PaymentInfo>
