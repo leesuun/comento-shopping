@@ -1,6 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
-import { ProductInfo } from "../mock/productItem";
 import DetailItem from "../components/detail/DetailItem";
 
 const ButtonGroup = styled.div`
