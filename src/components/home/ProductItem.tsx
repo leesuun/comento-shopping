@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ProductItemProps } from "../../interface/interface";
 
 const Item = styled.li`
   display: flex;
@@ -17,12 +18,6 @@ const Description = styled.p`
   line-height: 1.3;
   margin-bottom: 5px;
 `;
-
-interface ProductItemProps {
-  name: string;
-  thumbnail: string;
-  description: string;
-}
 
 function ProductItem({ name, description, thumbnail }: ProductItemProps) {
   return (

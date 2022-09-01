@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { productItems } from "../mock/productItem";
 import ProductItem from "../components/home/ProductItem";
 import ThemeBtn from "../components/home/ThemeBtn";
+import { Category } from "../interface/interface";
 
 export const ThemeSection = styled.div`
   display: flex;
@@ -22,11 +23,6 @@ export const ProductSection = styled.div`
 `;
 
 export const ProductList = styled.ul``;
-
-enum Category {
-  "cup" = "cup",
-  "winter" = "winter",
-}
 
 function Home() {
   const [category, setCategory] = useState<string>(Category.cup);

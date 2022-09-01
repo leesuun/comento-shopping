@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { IPaymentDataProps } from "../../interface/interface";
 
 const Price = styled.div`
   display: flex;
@@ -12,11 +13,6 @@ const Info = styled.span`
 const Data = styled.span`
   line-height: 1.5;
 `;
-
-interface IPaymentDataProps {
-  info: string;
-  price: string;
-}
 
 function PaymentData({ info, price }: IPaymentDataProps) {
   return (

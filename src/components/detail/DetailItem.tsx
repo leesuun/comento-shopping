@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
+import { IProductDetailProps } from "../../interface/interface";
 import { getProductDetail, ProductInfo } from "../../mock/productItem";
-import { IProductDetailProps } from "../../pages/ProductDetail";
 
 const Item = styled.div``;
 const Img = styled.img`

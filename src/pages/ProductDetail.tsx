@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import DetailItem from "../components/detail/DetailItem";
+import { IProductDetailProps } from "../interface/interface";
 
 const ButtonGroup = styled.div`
   display: flex;
@@ -20,10 +21,6 @@ export const BasketBtn = styled.button`
   background-color: #24dbaf;
   cursor: pointer;
 `;
-
-export interface IProductDetailProps {
-  id: string;
-}
 
 function ProductDetail() {
   const location = useLocation();
