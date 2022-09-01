@@ -22,14 +22,17 @@ export const BasketBtn = styled.button`
   cursor: pointer;
 `;
 
-export interface ProductDetailProps {
-  data: ProductInfo;
+interface IProductDetailProps {
+  id: string;
 }
 
 function ProductDetail() {
+  const location = useLocation();
+  const { id } = location.state as IProductDetailProps;
+
   return (
     <div>
-      <DetailItem />
+      <DetailItem id={id} />
       <ButtonGroup>
         <Button>상품 설명</Button>
         <Button>상품 후기</Button>
