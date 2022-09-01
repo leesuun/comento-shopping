@@ -76,3 +76,14 @@ export const productItems: productItemsType = {
     ],
   },
 };
+
+export const getProductDetail = (productId: number) => {
+  const productItemKeys = Object.keys(productItems);
+  const allProductItems: ProductInfo[] = [];
+
+  productItemKeys.forEach((key) => {
+    allProductItems.push(...productItems[key].items);
+  });
+
+  return allProductItems.find((item) => item.id === productId);
+};
