@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { ProductInfo } from "../apis/productItem";
-import ProductItem from "../components/ProductItem";
+import ProductItem from "../components/home/ProductItem";
 
 const ButtonGroup = styled.div`
   display: flex;

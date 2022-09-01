@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
-import BasketItem from "../components/BasketItem";
-import Overlay from "../components/Overlay";
-import PaymentData from "../components/PaymentData";
+import BasketItem from "../components/basket/BasketItem";
+import Overlay from "../components/global/Overlay";
+import PaymentData from "../components/detail/PaymentData";
 import { GrayLine } from "./Home";
 import { BasketBtn, ProductDetailProps } from "./ProductDetail";
 

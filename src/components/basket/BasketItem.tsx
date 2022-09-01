@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ProductInfo } from "../apis/productItem";
+import { ProductInfo } from "../../apis/productItem";
 
 const Item = styled.li`
   display: flex;

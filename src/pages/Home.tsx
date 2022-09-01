@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { productItems } from "../apis/productItem";
-import ProductItem from "../components/ProductItem";
-import ThemeBtn from "../components/ThemeBtn";
+import ProductItem from "../components/home/ProductItem";
+import ThemeBtn from "../components/home/ThemeBtn";
 
 export const ThemeSection = styled.div`
   display: flex;
