@@ -3,8 +3,8 @@ import { Link, useMatch, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
-import { ProductInfo, productItems } from "../mock/productItem";
-import { GrayLine } from "../pages/Home";
+import { ProductInfo, productItems } from "../../mock/productItem";
+import { GrayLine } from "../../pages/Home";
 
 const NavWraaper = styled.div`
   width: 100%;
