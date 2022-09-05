@@ -1,6 +1,7 @@
 /*  interface, types */
 
-/********************************** pages **********************************/
+/***************************************** pages *****************************************/
+
 /***************** home *****************/
 export enum Category {
   "cup" = "cup",
@@ -14,9 +15,9 @@ export interface IProductDetailProps {
 
 /***************** basket *****************/
 
-/********************************** components **********************************/
-/***************** home *****************/
+/***************************************** components *****************************************/
 
+/***************** home *****************/
 /* ThemeBtn */
 export interface ThemeBtnProps {
   themeName: string;
@@ -31,7 +32,6 @@ export interface ProductItemProps {
 }
 
 /***************** detail *****************/
-
 /* paymentdata */
 export interface IPaymentDataProps {
   info: string;
@@ -48,3 +48,18 @@ export enum Pages {
 
 /***************** basket *****************/
 /***************** global *****************/
+
+/************************************* productItem types *********************************/
+export interface ProductInfo {
+  name: string;
+  description: string;
+  thumbnail: string;
+  price: number;
+  id: number;
+}
+
+export interface productItemsType {
+  [category: string]: {
+    [items: string]: ProductInfo[];
+  };
+}

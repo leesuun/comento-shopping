@@ -1,10 +1,12 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import styled from "styled-components";
-import { productItems } from "../mock/productItem";
-import ProductItem from "../components/home/ProductItem";
+import axios from "axios";
+import { useSetRecoilState } from "recoil";
+
 import ThemeBtn from "../components/home/ThemeBtn";
 import { Category } from "../interface/interface";
+import { categoryAtom, productItemAtom } from "../atom";
+import ProductList from "../components/home/ProductList";
 
 export const ThemeSection = styled.div`
   display: flex;
@@ -22,12 +24,23 @@ export const ProductSection = styled.div`
   padding: 40px;
 `;
 
-export const ProductList = styled.ul``;
-
 function Home() {
-  const [category, setCategory] = useState<string>(Category.cup);
+  const setCategory = useSetRecoilState(categoryAtom);
+  const setProductItem = useSetRecoilState(productItemAtom);
 
   const onClickBtn = (type: string) => setCategory(type);
+
+  useEffect(() => {
+    try {
+      axios({
+        method: "get",
+        url: process.env.REACT_APP_MOCK_SERVER_URL,
+        responseType: "json",
+      }).then((response) => setProductItem(response.data));
+    } catch (err) {
+      console.log("Error msg is ", err);
+    }
+  }, [setProductItem]);
 
   return (
     <div>
@@ -45,21 +58,7 @@ function Home() {
       </ThemeSection>
       <GrayLine />
       <ProductSection>
-        <ProductList>
-          {productItems[category].items.map((item) => (
-            <Link
-              to={{ pathname: `/product/${item.name}` }}
-              state={{ id: item.id }}
-              key={item.name}
-            >
-              <ProductItem
-                name={item.name}
-                description={item.description}
-                thumbnail={item.thumbnail}
-              />
-            </Link>
-          ))}
-        </ProductList>
+        <ProductList />
       </ProductSection>
     </div>
   );

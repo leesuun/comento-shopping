@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import { useRecoilValue } from "recoil";
 import styled from "styled-components";
-import { IProductDetailProps } from "../../interface/interface";
-import { getProductDetail, ProductInfo } from "../../mock/productItem";
+import { productItemAtom } from "../../atom";
+import { IProductDetailProps, ProductInfo } from "../../interface/interface";
+import { getProductDetail } from "../../utils/utils";
 
 const Item = styled.div``;
 const Img = styled.img`
@@ -19,11 +21,12 @@ const Price = styled.div``;
 
 function DetailItem({ id }: IProductDetailProps) {
   const [product, setProduct] = useState<ProductInfo>();
+  const productItem = useRecoilValue(productItemAtom);
 
   useEffect(() => {
-    const result = getProductDetail(Number(id));
+    const result = getProductDetail(Number(id), productItem);
     setProduct(result);
-  }, [id]);
+  }, [id, productItem]);
 
   return (
     <Item>
