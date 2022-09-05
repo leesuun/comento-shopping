@@ -7,7 +7,7 @@ import { useRecoilState } from "recoil";
 import ProductItem from "../components/home/ProductItem";
 import ThemeBtn from "../components/home/ThemeBtn";
 import { Category } from "../interface/interface";
-import { productItemAtom } from "../atom";
+import { categoryAtom, productItemAtom } from "../atom";
 
 export const ThemeSection = styled.div`
   display: flex;
@@ -28,7 +28,7 @@ export const ProductSection = styled.div`
 export const ProductList = styled.ul``;
 
 function Home() {
-  const [category, setCategory] = useState<string>(Category.cup);
+  const [category, setCategory] = useRecoilState(categoryAtom);
   const [productItem, setProductItem] = useRecoilState(productItemAtom);
 
   const onClickBtn = (type: string) => setCategory(type);
@@ -44,7 +44,6 @@ function Home() {
       console.log("Error msg is ", err);
     }
   }, []);
-  console.log(productItem);
 
   return (
     <div>

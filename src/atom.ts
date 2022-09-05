@@ -12,3 +12,8 @@ export const productItemAtom = atom<productItemsType>({
     },
   },
 });
+
+export const categoryAtom = atom<string>({
+  key: "category",
+  default: "cup",
+});
