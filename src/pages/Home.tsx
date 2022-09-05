@@ -4,7 +4,7 @@ import styled from "styled-components";
 import axios from "axios";
 import { useRecoilState } from "recoil";
 
-import { productItems, productItemsType } from "../mock/productItem";
+import { productItemsType } from "../mock/productItem";
 import ProductItem from "../components/home/ProductItem";
 import ThemeBtn from "../components/home/ThemeBtn";
 import { Category } from "../interface/interface";
