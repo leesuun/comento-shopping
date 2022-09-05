@@ -1,13 +1,12 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import styled from "styled-components";
 import axios from "axios";
-import { useRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 
-import ProductItem from "../components/home/ProductItem";
 import ThemeBtn from "../components/home/ThemeBtn";
 import { Category } from "../interface/interface";
 import { categoryAtom, productItemAtom } from "../atom";
+import ProductList from "../components/home/ProductList";
 
 export const ThemeSection = styled.div`
   display: flex;
@@ -25,11 +24,9 @@ export const ProductSection = styled.div`
   padding: 40px;
 `;
 
-export const ProductList = styled.ul``;
-
 function Home() {
-  const [category, setCategory] = useRecoilState(categoryAtom);
-  const [productItem, setProductItem] = useRecoilState(productItemAtom);
+  const setCategory = useSetRecoilState(categoryAtom);
+  const setProductItem = useSetRecoilState(productItemAtom);
 
   const onClickBtn = (type: string) => setCategory(type);
 
@@ -61,25 +58,7 @@ function Home() {
       </ThemeSection>
       <GrayLine />
       <ProductSection>
-        <ProductList>
-          {productItem ? (
-            productItem[category].items.map((item) => (
-              <Link
-                to={{ pathname: `/product/${item.name}` }}
-                state={{ id: item.id }}
-                key={item.name}
-              >
-                <ProductItem
-                  name={item.name}
-                  description={item.description}
-                  thumbnail={item.thumbnail}
-                />
-              </Link>
-            ))
-          ) : (
-            <div>loading...</div>
-          )}
-        </ProductList>
+        <ProductList />
       </ProductSection>
     </div>
   );
