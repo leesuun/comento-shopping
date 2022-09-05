@@ -26,7 +26,7 @@ function DetailItem({ id }: IProductDetailProps) {
   useEffect(() => {
     const result = getProductDetail(Number(id), productItem);
     setProduct(result);
-  }, [id]);
+  }, [id, productItem]);
 
   return (
     <Item>

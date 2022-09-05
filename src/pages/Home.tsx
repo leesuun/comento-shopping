@@ -40,7 +40,7 @@ function Home() {
     } catch (err) {
       console.log("Error msg is ", err);
     }
-  }, []);
+  }, [setProductItem]);
 
   return (
     <div>
