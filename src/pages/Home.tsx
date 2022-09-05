@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import axios from "axios";
+import { useRecoilState } from "recoil";
+
 import { productItems, productItemsType } from "../mock/productItem";
 import ProductItem from "../components/home/ProductItem";
 import ThemeBtn from "../components/home/ThemeBtn";
 import { Category } from "../interface/interface";
-import axios from "axios";
+import { productItemAtom } from "../atom";
 
 export const ThemeSection = styled.div`
   display: flex;
@@ -27,7 +30,7 @@ export const ProductList = styled.ul``;
 
 function Home() {
   const [category, setCategory] = useState<string>(Category.cup);
-  const [productItem, setProductItem] = useState<productItemsType>();
+  const [productItem, setProductItem] = useRecoilState(productItemAtom);
 
   const onClickBtn = (type: string) => setCategory(type);
 
@@ -42,6 +45,7 @@ function Home() {
       console.log("Error msg is ", err);
     }
   }, []);
+  console.log(productItem);
 
   return (
     <div>
