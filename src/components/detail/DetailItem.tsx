@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { useRecoilValue } from "recoil";
 import styled from "styled-components";
 import { productItemAtom } from "../../atom";
-import { IProductDetailProps } from "../../interface/interface";
-import { getProductDetail, ProductInfo } from "../../mock/productItem";
+import { IProductDetailProps, ProductInfo } from "../../interface/interface";
+import { getProductDetail } from "../../utils/utils";
 
 const Item = styled.div``;
 const Img = styled.img`

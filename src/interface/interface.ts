@@ -1,5 +1,21 @@
 /*  interface, types */
 
+/********************************** components **********************************/
+/***************** productItem types *****************/
+export interface ProductInfo {
+  name: string;
+  description: string;
+  thumbnail: string;
+  price: number;
+  id: number;
+}
+
+export interface productItemsType {
+  [category: string]: {
+    [items: string]: ProductInfo[];
+  };
+}
+
 /********************************** pages **********************************/
 /***************** home *****************/
 export enum Category {
