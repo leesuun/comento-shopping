@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { productItems } from "../mock/productItem";
+import { productItems, productItemsType } from "../mock/productItem";
 import ProductItem from "../components/home/ProductItem";
 import ThemeBtn from "../components/home/ThemeBtn";
 import { Category } from "../interface/interface";
+import axios from "axios";
 
 export const ThemeSection = styled.div`
   display: flex;
@@ -26,12 +27,22 @@ export const ProductList = styled.ul``;
 
 function Home() {
   const [category, setCategory] = useState<string>(Category.cup);
+  const [productItem, setProductItem] = useState<productItemsType>({});
 
   const onClickBtn = (type: string) => setCategory(type);
 
-  fetch("https://30600da0-86d1-44d3-8436-f6d4521eb12c.mock.pstmn.io/test")
-    .then((response) => response.json())
-    .then((data) => console.log(data));
+  useEffect(() => {
+    try {
+      axios({
+        method: "get",
+        url: "https://30600da0-86d1-44d3-8436-f6d4521eb12c.mock.pstmn.io/product",
+        responseType: "json",
+      }).then((response) => setProductItem(response.data));
+    } catch (err) {
+      console.log("Error msg is ", err);
+    }
+  }, []);
+  console.log(productItem);
 
   return (
     <div>
