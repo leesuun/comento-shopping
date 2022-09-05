@@ -1,11 +1,9 @@
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
 import styled from "styled-components";
-import BasketItem from "../components/BasketItem";
-import Overlay from "../components/Overlay";
-import PaymentData from "../components/PaymentData";
+import Overlay from "../components/global/Overlay";
+import PaymentData from "../components/detail/PaymentData";
 import { GrayLine } from "./Home";
-import { BasketBtn, ProductDetailProps } from "./ProductDetail";
+import { BasketBtn } from "./ProductDetail";
 
 const Wrapper = styled.div`
   position: relative;
@@ -19,10 +17,6 @@ const PaymentInfo = styled.div`
 `;
 
 function Basket() {
-  const location = useLocation();
-  const {
-    data: { thumbnail, name, price },
-  } = location.state as ProductDetailProps;
   const [isOverlay, setIsOverlay] = useState(false);
 
   const onClick = () => {
@@ -33,8 +27,8 @@ function Basket() {
     <Wrapper>
       {isOverlay ? <Overlay /> : null}
       <BasketList>
-        <BasketItem thumbnail={thumbnail} name={name} price={price} />
-        <BasketItem thumbnail={thumbnail} name={name} price={price} />
+        {/* <BasketItem />
+        <BasketItem /> */}
       </BasketList>
       <GrayLine style={{ height: "1px" }} />
       <PaymentInfo>

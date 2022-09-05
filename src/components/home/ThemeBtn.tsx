@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import { ThemeBtnProps } from "../../interface/interface";
 
 const opacity = keyframes`
   100% {
@@ -22,12 +23,6 @@ const ThemeBtnStyled = styled.button`
     animation: ${opacity} 0.5s forwards;
   }
 `;
-
-interface ThemeBtnProps {
-  themeName: string;
-  type: string;
-  onClick: (type: string) => void;
-}
 
 function ThemeBtn({ themeName, onClick, type }: ThemeBtnProps) {
   return (

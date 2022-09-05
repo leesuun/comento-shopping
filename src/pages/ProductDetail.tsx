@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
-import { ProductInfo } from "../apis/productItem";
-import ProductItem from "../components/ProductItem";
+import DetailItem from "../components/detail/DetailItem";
+import { IProductDetailProps } from "../interface/interface";
 
 const ButtonGroup = styled.div`
   display: flex;
@@ -22,40 +22,20 @@ export const BasketBtn = styled.button`
   cursor: pointer;
 `;
 
-export interface ProductDetailProps {
-  data: ProductInfo;
-}
-
-const style: { [stinrg: string]: string } = {
-  height: "420px",
-  marginLeft: "20px",
-  marginTop: "-7px",
-};
-
 function ProductDetail() {
   const location = useLocation();
-  const {
-    data: { name, price, thumbnail },
-  } = location.state as ProductDetailProps;
+  const { id } = location.state as IProductDetailProps;
 
   return (
     <div>
-      <ProductItem
-        style={style}
-        name={name}
-        price={price}
-        thumbnail={thumbnail}
-      />
+      <DetailItem id={id} />
       <ButtonGroup>
         <Button>상품 설명</Button>
         <Button>상품 후기</Button>
       </ButtonGroup>
       <ProductExplain />
       <ProductComment>코멘트</ProductComment>
-      <Link
-        to={{ pathname: "/basket" }}
-        state={{ data: { name, price, thumbnail } }}
-      >
+      <Link to={{ pathname: "/basket" }}>
         <BasketBtn>장바구니 담기</BasketBtn>
       </Link>
     </div>

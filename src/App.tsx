@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Navigation from "./components/Navigation";
+import Navigation from "./components/header/Navigation";
 import { GlobalStyle } from "./globalstyle";
 import Basket from "./pages/Basket";
 import Home from "./pages/Home";
