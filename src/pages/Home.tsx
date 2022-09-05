@@ -41,6 +41,7 @@ function Home() {
       console.log("Error msg is ", err);
     }
   }, [setProductItem]);
+  console.log(process.env.REACT_APP_MOCK_SERVER_URL);
 
   return (
     <div>
