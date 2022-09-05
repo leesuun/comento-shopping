@@ -12,12 +12,15 @@ export interface productItemsType {
   };
 }
 
-export const getProductDetail = (productId: number) => {
-  const productItemKeys = Object.keys(productItems);
+export const getProductDetail = (
+  productId: number,
+  productItem: productItemsType
+) => {
+  const productItemKeys = Object.keys(productItem);
   const allProductItems: ProductInfo[] = [];
 
   productItemKeys.forEach((key) => {
-    allProductItems.push(...productItems[key].items);
+    allProductItems.push(...productItem[key].items);
   });
 
   return allProductItems.find((item) => item.id === productId);
