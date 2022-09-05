@@ -34,7 +34,7 @@ function Home() {
     try {
       axios({
         method: "get",
-        url: process.env.REACT_APP_MOCK_SERVER_URL,
+        url: "https://30600da0-86d1-44d3-8436-f6d4521eb12c.mock.pstmn.io/product",
         responseType: "json",
       }).then((response) => setProductItem(response.data));
     } catch (err) {
