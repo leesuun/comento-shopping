@@ -27,7 +27,7 @@ export const ProductList = styled.ul``;
 
 function Home() {
   const [category, setCategory] = useState<string>(Category.cup);
-  const [productItem, setProductItem] = useState<productItemsType>({});
+  const [productItem, setProductItem] = useState<productItemsType>();
 
   const onClickBtn = (type: string) => setCategory(type);
 
@@ -42,7 +42,6 @@ function Home() {
       console.log("Error msg is ", err);
     }
   }, []);
-  console.log(productItem);
 
   return (
     <div>
@@ -61,19 +60,23 @@ function Home() {
       <GrayLine />
       <ProductSection>
         <ProductList>
-          {productItems[category].items.map((item) => (
-            <Link
-              to={{ pathname: `/product/${item.name}` }}
-              state={{ id: item.id }}
-              key={item.name}
-            >
-              <ProductItem
-                name={item.name}
-                description={item.description}
-                thumbnail={item.thumbnail}
-              />
-            </Link>
-          ))}
+          {productItem ? (
+            productItem[category].items.map((item) => (
+              <Link
+                to={{ pathname: `/product/${item.name}` }}
+                state={{ id: item.id }}
+                key={item.name}
+              >
+                <ProductItem
+                  name={item.name}
+                  description={item.description}
+                  thumbnail={item.thumbnail}
+                />
+              </Link>
+            ))
+          ) : (
+            <div>loading...</div>
+          )}
         </ProductList>
       </ProductSection>
     </div>
