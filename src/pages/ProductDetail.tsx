@@ -13,6 +13,8 @@ const Button = styled.button`
   width: 100%;
   height: 48px;
   border: none;
+  background-color: white;
+  cursor: pointer;
 `;
 
 const Explain = styled.div`
@@ -54,8 +56,18 @@ function ProductDetail() {
     <div>
       <DetailItem id={id} />
       <ButtonGroup>
-        <Button onClick={onClickBtn}>상품 설명</Button>
-        <Button onClick={onClickBtn}>상품 후기</Button>
+        <Button
+          style={{ backgroundColor: isComment ? "white" : "gray" }}
+          onClick={onClickBtn}
+        >
+          상품 설명
+        </Button>
+        <Button
+          style={{ backgroundColor: isComment ? "gray" : "white" }}
+          onClick={onClickBtn}
+        >
+          상품 후기
+        </Button>
       </ButtonGroup>
       {isComment ? (
         <CommentGroup>
