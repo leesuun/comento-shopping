@@ -3,6 +3,8 @@ import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import DetailItem from "../components/detail/DetailItem";
 import { IProductDetailProps } from "../interface/interface";
+import productDetailImg from "../assets/img/상품설명.png";
+import productCommentImg from "../assets/img/상품후기.png";
 
 const ButtonGroup = styled.div`
   display: flex;
@@ -13,9 +15,26 @@ const Button = styled.button`
   border: none;
 `;
 
-const Explain = styled.div``;
-const CommentGroup = styled.ul``;
-const Comment = styled.li``;
+const Explain = styled.div`
+  background-image: url(${productDetailImg});
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 390px;
+  height: 1000px;
+`;
+const CommentGroup = styled.ul`
+  display: flex;
+  padding: 15px;
+  gap: 10px;
+  flex-direction: column;
+`;
+const Comment = styled.li`
+  background-image: url(${productCommentImg});
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 84px;
+`;
 export const BasketBtn = styled.button`
   width: 100%;
   height: 70px;
@@ -40,12 +59,12 @@ function ProductDetail() {
       </ButtonGroup>
       {isComment ? (
         <CommentGroup>
-          <Comment key={1}>코멘트</Comment>
-          <Comment key={2}>코멘트</Comment>
-          <Comment key={3}>코멘트</Comment>
+          <Comment key={1}></Comment>
+          <Comment key={2}></Comment>
+          <Comment key={3}></Comment>
         </CommentGroup>
       ) : (
-        <Explain>상품 설명</Explain>
+        <Explain />
       )}
 
       <Link to={{ pathname: "/basket" }}>
