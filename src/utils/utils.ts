@@ -2,13 +2,13 @@ import { ProductInfo, productItemsType } from "interface/interface";
 
 export const getProductDetail = (
   productId: number,
-  productItem: productItemsType
+  productItems: productItemsType
 ) => {
-  const productItemKeys = Object.keys(productItem);
+  const productItemKeys = Object.keys(productItems);
   const allProductItems: ProductInfo[] = [];
 
   productItemKeys.forEach((key) => {
-    allProductItems.push(...productItem[key].items);
+    allProductItems.push(...productItems[key].items);
   });
 
   return allProductItems.find((item) => item.id === productId);
