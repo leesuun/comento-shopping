@@ -2,9 +2,9 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import DetailItem from "./components/DetailItem";
-import { IProductDetailProps } from "../../interface/interface";
-import productDetailImg from "../../assets/img/상품설명.png";
-import productCommentImg from "../../assets/img/상품후기.png";
+import { IProductDetailProps } from "interface/interface";
+import productDetailImg from "assets/img/상품설명.png";
+import productCommentImg from "assets/img/상품후기.png";
 
 const ButtonGroup = styled.div`
   display: flex;

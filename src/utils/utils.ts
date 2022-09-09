@@ -1,4 +1,4 @@
-import { ProductInfo, productItemsType } from "../interface/interface";
+import { ProductInfo, productItemsType } from "interface/interface";
 
 export const getProductDetail = (
   productId: number,

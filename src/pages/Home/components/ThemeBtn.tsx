@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import { ThemeBtnProps } from "../../../interface/interface";
+import { ThemeBtnProps } from "interface/interface";
 
 const opacity = keyframes`
   100% {

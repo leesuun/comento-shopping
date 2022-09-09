@@ -4,8 +4,8 @@ import axios from "axios";
 import { useSetRecoilState } from "recoil";
 
 import ThemeBtn from "./components/ThemeBtn";
-import { Category } from "../../interface/interface";
-import { categoryAtom, productItemAtom } from "../../atom";
+import { Category } from "interface/interface";
+import { categoryAtom, productItemAtom } from "atom";
 import ProductList from "./components/ProductList";
 
 export const ThemeSection = styled.div`
