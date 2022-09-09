@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useRecoilValue } from "recoil";
-import { categoryAtom, productItemAtom } from "../../atom";
+import { categoryAtom, productItemAtom } from "../../../atom";
 import { Link } from "react-router-dom";
 import ProductItem from "./ProductItem";
 

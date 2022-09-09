@@ -1,9 +1,9 @@
 import { useState } from "react";
 import styled from "styled-components";
-import Overlay from "../components/global/Overlay";
-import PaymentData from "../components/detail/PaymentData";
-import { GrayLine } from "./Home";
-import { BasketBtn } from "./ProductDetail";
+import Overlay from "../../components/global/Overlay";
+import PaymentData from "../ProductDetail/components/PaymentData";
+import { GrayLine } from "../Home";
+import { BasketBtn } from "../ProductDetail";
 
 const Wrapper = styled.div`
   position: relative;

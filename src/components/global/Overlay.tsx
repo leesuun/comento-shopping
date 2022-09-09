@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import Popup from "../basket/Popup";
+import Popup from "../../pages/Basket/components/Popup";
 
 const OverlayBox = styled.div`
   position: absolute;

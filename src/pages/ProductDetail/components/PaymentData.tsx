@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { IPaymentDataProps } from "../../interface/interface";
+import { IPaymentDataProps } from "../../../interface/interface";
 
 const Price = styled.div`
   display: flex;
