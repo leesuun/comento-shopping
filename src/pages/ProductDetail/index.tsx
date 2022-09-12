@@ -50,7 +50,7 @@ function ProductDetail() {
   const { id } = location.state as IProductDetailProps;
   const [isComment, setIsComment] = useState(false);
 
-  const onClickBtn = () => setIsComment((prev) => !prev);
+  const onClickCategoryBtn = () => setIsComment((prev) => !prev);
 
   return (
     <div>
@@ -58,13 +58,13 @@ function ProductDetail() {
       <ButtonGroup>
         <Button
           style={{ backgroundColor: isComment ? "white" : "gray" }}
-          onClick={onClickBtn}
+          onClick={onClickCategoryBtn}
         >
           상품 설명
         </Button>
         <Button
           style={{ backgroundColor: isComment ? "gray" : "white" }}
-          onClick={onClickBtn}
+          onClick={onClickCategoryBtn}
         >
           상품 후기
         </Button>
