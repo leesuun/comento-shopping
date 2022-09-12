@@ -10,12 +10,35 @@ const Wrapper = styled.div`
   position: relative;
 `;
 
-const List = styled.ul``;
-const Item = styled.li``;
-const Img = styled.img``;
-const Info = styled.div``;
-const Name = styled.span``;
+const List = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+`;
+const Item = styled.li`
+  display: flex;
+  position: relative;
+`;
+const Img = styled.img`
+  width: 120px;
+`;
+const Info = styled.div`
+  display: flex;
+  padding: 7px;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+const Name = styled.span`
+  width: 200px;
+`;
 const Price = styled.span``;
+
+const CancleBtn = styled.div`
+  position: absolute;
+  right: 3px;
+  top: 3px;
+`;
 
 const PaymentInfo = styled.div`
   margin-top: 150px;
@@ -39,15 +62,16 @@ function Basket() {
         {basketItems ? (
           basketItems.map((item) => (
             <Item key={item.id}>
-              <Img src={item.thumbnail} style={{ width: "100px" }} alt="" />
+              <Img src={item.thumbnail} alt="" />
               <Info>
                 <Name>{item.name}</Name>
-                <Price>{item.price}</Price>
+                <Price>{item.price + "원"}</Price>
               </Info>
+              <CancleBtn>x</CancleBtn>
             </Item>
           ))
         ) : (
-          <div>anything...</div>
+          <div>nothing...</div>
         )}
       </List>
       <GrayLine style={{ height: "1px" }} />
