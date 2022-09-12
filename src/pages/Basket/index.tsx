@@ -38,7 +38,7 @@ function Basket() {
       <List>
         {basketItems ? (
           basketItems.map((item) => (
-            <Item>
+            <Item key={item.id}>
               <Img src={item.thumbnail} style={{ width: "100px" }} alt="" />
               <Info>
                 <Name>{item.name}</Name>
