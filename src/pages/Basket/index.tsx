@@ -5,6 +5,8 @@ import PaymentData from "pages/Basket/components/PaymentData";
 import { GrayLine } from "pages/Home";
 import { BasketBtn } from "pages/ProductDetail";
 import { ProductInfo } from "interface/interface";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faX } from "@fortawesome/free-solid-svg-icons";
 
 const Wrapper = styled.div`
   position: relative;
@@ -67,7 +69,9 @@ function Basket() {
                 <Name>{item.name}</Name>
                 <Price>{item.price + "원"}</Price>
               </Info>
-              <CancleBtn>x</CancleBtn>
+              <CancleBtn>
+                <FontAwesomeIcon icon={faX}></FontAwesomeIcon>
+              </CancleBtn>
             </Item>
           ))
         ) : (
