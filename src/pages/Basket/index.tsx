@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import Overlay from "components/global/Overlay";
-import PaymentData from "pages/ProductDetail/components/PaymentData";
+import PaymentData from "pages/Basket/components/PaymentData";
 import { GrayLine } from "pages/Home";
 import { BasketBtn } from "pages/ProductDetail";
 
@@ -18,6 +18,7 @@ const PaymentInfo = styled.div`
 
 function Basket() {
   const [isOverlay, setIsOverlay] = useState(false);
+  const basketItems = JSON.parse(localStorage.getItem("basketItems") || "");
 
   const onClick = () => {
     setIsOverlay((prev) => !prev);
