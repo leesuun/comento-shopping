@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import DetailItem from "./components/DetailItem";
-import { IProductDetailProps } from "interface/interface";
+import { IProductDetailProps, ProductInfo } from "interface/interface";
 import productDetailImg from "assets/img/상품설명.png";
 import productCommentImg from "assets/img/상품후기.png";
 import { useRecoilValue } from "recoil";
@@ -53,11 +53,23 @@ function ProductDetail() {
   const { id } = location.state as IProductDetailProps;
   const [isComment, setIsComment] = useState(false);
   const productItem = useRecoilValue(productItemAtom);
+
   const onClickCategoryBtn = () => setIsComment((prev) => !prev);
 
   const onClickBasketBtn = () => {
     const result = getProductDetail(Number(id), productItem);
-    localStorage.setItem("basketItems", JSON.stringify(result));
+    const localBasketItems = localStorage.getItem("basketItems");
+    const basketItems: ProductInfo[] = [];
+    if (localBasketItems !== null) {
+      basketItems.push(...JSON.parse(localBasketItems));
+    }
+    if (basketItems.find((item) => item.id === result?.id)) {
+    } else {
+      localStorage.setItem(
+        "basketItems",
+        JSON.stringify([...basketItems, result])
+      );
+    }
   };
 
   return (
@@ -95,3 +107,12 @@ function ProductDetail() {
 }
 
 export default ProductDetail;
+
+// setBasketItems((prevBasketItems) => {
+//   if (!result) return [...prevBasketItems];
+//   if (prevBasketItems.find((item) => item.id === result.id)) {
+//     return [...prevBasketItems];
+//   }
+
+//   return [...prevBasketItems, result];
+// });
