@@ -5,6 +5,9 @@ import DetailItem from "./components/DetailItem";
 import { IProductDetailProps } from "interface/interface";
 import productDetailImg from "assets/img/상품설명.png";
 import productCommentImg from "assets/img/상품후기.png";
+import { useRecoilValue } from "recoil";
+import { productItemAtom } from "atom";
+import { getProductDetail } from "utils/utils";
 
 const ButtonGroup = styled.div`
   display: flex;
@@ -49,8 +52,13 @@ function ProductDetail() {
   const location = useLocation();
   const { id } = location.state as IProductDetailProps;
   const [isComment, setIsComment] = useState(false);
-
+  const productItem = useRecoilValue(productItemAtom);
   const onClickCategoryBtn = () => setIsComment((prev) => !prev);
+
+  const onClickBasketBtn = () => {
+    const result = getProductDetail(Number(id), productItem);
+    localStorage.setItem("basketItems", JSON.stringify(result));
+  };
 
   return (
     <div>
@@ -80,7 +88,7 @@ function ProductDetail() {
       )}
 
       <Link to={{ pathname: "/basket" }}>
-        <BasketBtn>장바구니 담기</BasketBtn>
+        <BasketBtn onClick={onClickBasketBtn}>장바구니 담기</BasketBtn>
       </Link>
     </div>
   );
