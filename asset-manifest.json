@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/comento-shopping/static/js/main.c8181c11.js",
+    "static/media/상품설명.png": "/comento-shopping/static/media/상품설명.8a1393ff4f06f089d52b.png",
+    "static/media/상품후기.png": "/comento-shopping/static/media/상품후기.7d05399a37ab267d5b15.png",
+    "index.html": "/comento-shopping/index.html",
+    "main.c8181c11.js.map": "/comento-shopping/static/js/main.c8181c11.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.c8181c11.js"
+  ]
+}
