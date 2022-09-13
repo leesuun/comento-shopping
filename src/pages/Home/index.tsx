@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import styled from "styled-components";
-import axios from "axios";
+// import axios from "axios";
 import { useSetRecoilState } from "recoil";
 
 import ThemeBtn from "./components/ThemeBtn";
