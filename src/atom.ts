@@ -1,5 +1,5 @@
 import { atom } from "recoil";
-import { productItemsType } from "interface/interface";
+import { productCountProps, productItemsType } from "interface/interface";
 
 export const productItemAtom = atom<productItemsType>({
   key: "productItem",
@@ -16,4 +16,9 @@ export const productItemAtom = atom<productItemsType>({
 export const categoryAtom = atom<string>({
   key: "category",
   default: "cup",
+});
+
+export const productCountAtom = atom<productCountProps[]>({
+  key: "productCount",
+  default: [],
 });
