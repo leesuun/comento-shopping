@@ -13,3 +13,13 @@ export const getProductDetail = (
 
   return allProductItems.find((item) => item.id === productId);
 };
+
+export const getTotalProductAmount = (basketItems: ProductInfo[]) => {
+  const initialValue = 0;
+  const totalProductAmount = String(
+    basketItems
+      .map((item) => item.price)
+      .reduce((prev, curr) => prev + curr, initialValue)
+  );
+  return totalProductAmount + "원";
+};

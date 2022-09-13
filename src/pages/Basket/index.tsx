@@ -7,6 +7,7 @@ import { BasketBtn } from "pages/ProductDetail";
 import { ProductInfo } from "interface/interface";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
+import { getTotalProductAmount } from "utils/utils";
 
 const Wrapper = styled.div`
   position: relative;
@@ -89,9 +90,15 @@ function Basket() {
       </List>
       <GrayLine style={{ height: "1px" }} />
       <PaymentInfo>
-        <PaymentData info="상품 금액" price="20000원" />
+        <PaymentData
+          info="총 상품금액"
+          price={getTotalProductAmount(basketItems)}
+        />
         <PaymentData info="배송비" price="0원" />
-        <PaymentData info="총 주문금액" price="20000원" />
+        <PaymentData
+          info="총 주문금액"
+          price={getTotalProductAmount(basketItems)}
+        />
       </PaymentInfo>
       <BasketBtn onClick={onClick}>주문하기</BasketBtn>
     </Wrapper>
