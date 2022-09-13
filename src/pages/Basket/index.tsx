@@ -46,7 +46,12 @@ function Basket() {
           price={getTotalProductAmount(basketItems)}
         />
       </PaymentInfo>
-      <BasketBtn onClick={onClick}>주문하기</BasketBtn>
+      <BasketBtn
+        disabled={basketItems.length === 0 ? true : false}
+        onClick={onClick}
+      >
+        주문하기
+      </BasketBtn>
     </Wrapper>
   );
 }
