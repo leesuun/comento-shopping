@@ -63,3 +63,8 @@ export interface productItemsType {
     [items: string]: ProductInfo[];
   };
 }
+
+export interface productCountProps {
+  id: number;
+  count: number;
+}
