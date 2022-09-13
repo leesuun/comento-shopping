@@ -49,7 +49,7 @@ function BasketItemList({ setRender, render }: any) {
   };
   return (
     <List>
-      {basketItems ? (
+      {basketItems.length !== 0 ? (
         basketItems.map((item) => (
           <Item key={item.id}>
             <Img src={item.thumbnail} alt="" />
@@ -63,7 +63,7 @@ function BasketItemList({ setRender, render }: any) {
           </Item>
         ))
       ) : (
-        <div>nothing...</div>
+        <div>장바구니에 담긴 상품이 없습니다.</div>
       )}
     </List>
   );
