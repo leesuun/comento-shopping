@@ -40,6 +40,7 @@ const CancleBtn = styled.div`
   position: absolute;
   right: 3px;
   top: 3px;
+  cursor: pointer;
 `;
 
 const PaymentInfo = styled.div`
@@ -52,9 +53,17 @@ function Basket() {
   const basketItems: ProductInfo[] = JSON.parse(
     localStorage.getItem("basketItems") || ""
   );
+  const [test, setTest] = useState(1);
 
   const onClick = () => {
     setIsOverlay((prev) => !prev);
+  };
+  const onClickCancleBtn = (selectedItem: ProductInfo) => {
+    setTest((prev) => prev + 1);
+    const newBasketItems = basketItems.filter(
+      (item) => item.id !== selectedItem.id
+    );
+    localStorage.setItem("basketItems", JSON.stringify(newBasketItems));
   };
 
   return (
@@ -69,7 +78,7 @@ function Basket() {
                 <Name>{item.name}</Name>
                 <Price>{item.price + "원"}</Price>
               </Info>
-              <CancleBtn>
+              <CancleBtn onClick={() => onClickCancleBtn(item)}>
                 <FontAwesomeIcon icon={faX}></FontAwesomeIcon>
               </CancleBtn>
             </Item>
