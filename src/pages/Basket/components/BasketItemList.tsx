@@ -2,6 +2,8 @@ import { ProductInfo } from "interface/interface";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
+import { useSetRecoilState } from "recoil";
+import { productCountAtom } from "atom";
 
 const List = styled.ul`
   display: flex;
@@ -45,6 +47,7 @@ function BasketItemList({ setRender, render }: any) {
   const basketItems: ProductInfo[] = JSON.parse(
     localStorage.getItem("basketItems") || ""
   );
+  const setProductCount = useSetRecoilState(productCountAtom);
 
   const onClickCancleBtn = (selectedItem: ProductInfo) => {
     console.log(render);
@@ -56,9 +59,17 @@ function BasketItemList({ setRender, render }: any) {
   };
 
   const onChange = (id: number, event: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(id);
-    console.log(event.currentTarget.value);
+    setProductCount((prevItem) => {
+      const copyPrevItem = [...prevItem];
+      const newPrevItem = copyPrevItem.map((item) => {
+        if (item.id === id)
+          return { id, count: Number(event.currentTarget.value) };
+        return item;
+      });
+      return newPrevItem;
+    });
   };
+
   return (
     <List>
       {basketItems.length !== 0 ? (
