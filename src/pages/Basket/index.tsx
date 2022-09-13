@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import Overlay from "components/global/Overlay";
 import PaymentData from "pages/Basket/components/PaymentData";
@@ -8,6 +8,8 @@ import { ProductInfo } from "interface/interface";
 
 import { getTotalProductAmount } from "utils/utils";
 import BasketItemList from "./components/BasketItemList";
+import { useRecoilState } from "recoil";
+import { productCountAtom } from "atom";
 
 const Wrapper = styled.div`
   position: relative;
@@ -21,10 +23,20 @@ const PaymentInfo = styled.div`
 function Basket() {
   const [isOverlay, setIsOverlay] = useState(false);
   const [render, setRender] = useState(1);
+  const [productCount, setProductCount] = useRecoilState(productCountAtom);
 
   const basketItems: ProductInfo[] = JSON.parse(
     localStorage.getItem("basketItems") || ""
   );
+
+  useEffect(() => {
+    setProductCount(() => {
+      const arr = basketItems.map((item) => {
+        return { count: 1, id: item.id };
+      });
+      return arr;
+    });
+  }, [basketItems.length]);
 
   const onClick = () => {
     setIsOverlay((prev) => !prev);
