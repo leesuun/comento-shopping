@@ -89,7 +89,7 @@ function Basket() {
       </List>
       <GrayLine style={{ height: "1px" }} />
       <PaymentInfo>
-        <PaymentData info="상품 금액(x개)" price="20000원" />
+        <PaymentData info="상품 금액" price="20000원" />
         <PaymentData info="배송비" price="0원" />
         <PaymentData info="총 주문금액" price="20000원" />
       </PaymentInfo>
