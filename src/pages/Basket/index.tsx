@@ -60,6 +60,7 @@ function Basket() {
     setIsOverlay((prev) => !prev);
   };
   const onClickCancleBtn = (selectedItem: ProductInfo) => {
+    console.log(test);
     setTest((prev) => prev + 1);
     const newBasketItems = basketItems.filter(
       (item) => item.id !== selectedItem.id
