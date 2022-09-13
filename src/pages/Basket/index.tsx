@@ -50,12 +50,12 @@ function Basket() {
       <PaymentInfo>
         <PaymentData
           info="총 상품금액"
-          price={getTotalProductAmount(basketItems)}
+          price={getTotalProductAmount(basketItems, productCount)}
         />
         <PaymentData info="배송비" price="0원" />
         <PaymentData
           info="총 주문금액"
-          price={getTotalProductAmount(basketItems)}
+          price={getTotalProductAmount(basketItems, productCount)}
         />
       </PaymentInfo>
       <BasketBtn
