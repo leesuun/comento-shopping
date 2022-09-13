@@ -30,13 +30,16 @@ function Basket() {
   );
 
   useEffect(() => {
+    const basketItems: ProductInfo[] = JSON.parse(
+      localStorage.getItem("basketItems") || ""
+    );
     setProductCount(() => {
       const arr = basketItems.map((item) => {
         return { count: 1, id: item.id };
       });
       return arr;
     });
-  }, [basketItems.length]);
+  }, [setProductCount]);
 
   const onClick = () => {
     setIsOverlay((prev) => !prev);
