@@ -7,6 +7,7 @@ import ThemeBtn from "./components/ThemeBtn";
 import { Category } from "interface/interface";
 import { categoryAtom, productItemAtom } from "atom";
 import ProductList from "./components/ProductList";
+import { data } from "mock/data";
 
 export const ThemeSection = styled.div`
   display: flex;
@@ -31,15 +32,16 @@ function Home() {
   const onClickBtn = (type: string) => setCategory(type);
 
   useEffect(() => {
-    try {
-      axios({
-        method: "get",
-        url: "https://30600da0-86d1-44d3-8436-f6d4521eb12c.mock.pstmn.io/product",
-        responseType: "json",
-      }).then((response) => setProductItem(response.data));
-    } catch (err) {
-      console.log("Error msg is ", err);
-    }
+    // try {
+    //   axios({
+    //     method: "get",
+    //     url: "https://30600da0-86d1-44d3-8436-f6d4521eb12c.mock.pstmn.io/product",
+    //     responseType: "json",
+    //   }).then((response) => setProductItem(response.data));
+    // } catch (err) {
+    //   console.log("Error msg is ", err);
+    // }
+    setProductItem(data);
   }, [setProductItem]);
 
   return (
