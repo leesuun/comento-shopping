@@ -34,6 +34,13 @@ const CancleBtn = styled.div`
   cursor: pointer;
 `;
 
+const Count = styled.input`
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  width: 50px;
+`;
+
 function BasketItemList({ setRender, render }: any) {
   const basketItems: ProductInfo[] = JSON.parse(
     localStorage.getItem("basketItems") || ""
@@ -47,6 +54,11 @@ function BasketItemList({ setRender, render }: any) {
     );
     localStorage.setItem("basketItems", JSON.stringify(newBasketItems));
   };
+
+  const onChange = (id: number, event: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(id);
+    console.log(event.currentTarget.value);
+  };
   return (
     <List>
       {basketItems.length !== 0 ? (
@@ -56,6 +68,13 @@ function BasketItemList({ setRender, render }: any) {
             <Info>
               <Name>{item.name}</Name>
               <Price>{item.price + "원"}</Price>
+              <Count
+                onChange={(e) => onChange(item.id, e)}
+                type="number"
+                min={1}
+                max={99}
+                defaultValue={1}
+              />
             </Info>
             <CancleBtn onClick={() => onClickCancleBtn(item)}>
               <FontAwesomeIcon icon={faX}></FontAwesomeIcon>
