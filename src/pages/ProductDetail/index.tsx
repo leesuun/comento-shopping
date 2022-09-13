@@ -107,12 +107,3 @@ function ProductDetail() {
 }
 
 export default ProductDetail;
-
-// setBasketItems((prevBasketItems) => {
-//   if (!result) return [...prevBasketItems];
-//   if (prevBasketItems.find((item) => item.id === result.id)) {
-//     return [...prevBasketItems];
-//   }
-
-//   return [...prevBasketItems, result];
-// });
