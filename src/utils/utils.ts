@@ -27,6 +27,7 @@ export const getTotalProductAmount = (
     .map((item) => {
       const total = productCount.find((info) => item.id === info.id);
       if (total) return total.count * item.price;
+      return null;
     })
     .reduce((prev, curr) => (prev || 0) + (curr || 0), initialValue);
 
