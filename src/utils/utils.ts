@@ -1,4 +1,8 @@
-import { ProductInfo, productItemsType } from "interface/interface";
+import {
+  productCountProps,
+  ProductInfo,
+  productItemsType,
+} from "interface/interface";
 
 export const getProductDetail = (
   productId: number,
@@ -14,12 +18,17 @@ export const getProductDetail = (
   return allProductItems.find((item) => item.id === productId);
 };
 
-export const getTotalProductAmount = (basketItems: ProductInfo[]) => {
+export const getTotalProductAmount = (
+  basketItems: ProductInfo[],
+  productCount: productCountProps[]
+) => {
   const initialValue = 0;
-  const totalProductAmount = String(
-    basketItems
-      .map((item) => item.price)
-      .reduce((prev, curr) => prev + curr, initialValue)
-  );
+  const totalProductAmount = basketItems
+    .map((item) => {
+      const total = productCount.find((info) => item.id === info.id);
+      if (total) return total.count * item.price;
+    })
+    .reduce((prev, curr) => (prev || 0) + (curr || 0), initialValue);
+
   return totalProductAmount + "원";
 };
